@@ -24,3 +24,7 @@ get '/' do
 	halt code, Yajl::Encoder.encode(data)
 
 end
+
+get '/is_alive'
+	"Yeah online :D"
+end
