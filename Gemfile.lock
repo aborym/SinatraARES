@@ -10,6 +10,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.1)
       rack
+    redis (3.0.6)
     safe_yaml (0.9.7)
     shotgun (0.9)
       rack (>= 1.0)
@@ -29,6 +30,7 @@ PLATFORMS
 
 DEPENDENCIES
   ares_cz
+  redis
   shotgun
   sinatra
   thin
