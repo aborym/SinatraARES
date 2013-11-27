@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'sinatra'
-gem 'sinatra/cross_origin'
+gem 'sinatra-cross_origin'
 gem 'ares_cz'
 gem 'yajl-ruby'
 gem 'thin'
