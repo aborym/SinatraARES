@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'sinatra/cross_origin'
+require 'newrelic_rpm'
 require 'yajl'
 require 'ares_cz'
 require 'redis'
@@ -8,6 +10,8 @@ ENV["REDISTOGO_URL"] = 'redis://127.0.0.1:6379' if ENV['RACK_ENV'] == 'developme
 
 uri = URI.parse(ENV["REDISTOGO_URL"])
 REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+
+enable cross_origin
 
 get '/' do
 	content_type :json
@@ -34,9 +38,8 @@ get '/' do
 
 end
 
-get '/is_alive' do
-	"Yeah online :D"
-end
+get '/is_alive' { "Yeah online :D" }
+
 
 get '/stats' do
 	content_type :json
